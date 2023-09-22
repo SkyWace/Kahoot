@@ -33,6 +33,56 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Rendre visible le compteur de bonnes réponses
                     finalResult.style.display = "block";
                     correctAnswerCount.innerText = `Bonnes réponses : ${correctAnswers}`;
+                    result.textContent = "Faux. La réponse était Faux.";
+                }
+                currentQuestionIndex++;
+                displayQuestion(questions, currentQuestionIndex);
+            }
+        });
+});
+
+falseButton.addEventListener("click", () => {
+    fetch("questions.php")
+        .then(response => response.json())
+        .then(questions => {
+            const question = questions[`question${currentQuestionIndex + 1}`];
+            if (question) {
+                if (question.answer === false) {
+                    result.textContent = "Correct !";
+                } else {
+                    result.textContent = "Faux. La réponse était Vrai.";
+                }
+                currentQuestionIndex++;
+                displayQuestion(questions, currentQuestionIndex);
+            }
+        });
+});
+
+fetch("questions.php")
+    .then(response => response.json())
+    .then(questions => {
+        displayQuestion(questions, currentQuestionIndex);
+    });
+
+const likeOptions = document.querySelectorAll('input[name="like-option"]');
+const likeCounts = document.querySelectorAll('.like-count');
+
+likeOptions.forEach((option, index) => {
+    let previousOptionValue = null; // Pour stocker la valeur précédente sélectionnée
+
+    option.addEventListener("change", () => {
+        const selectedOptionValue = option.value;
+        const likeCount = likeCounts[index];
+
+        if (previousOptionValue === selectedOptionValue) {
+            // Si l'option sélectionnée est la même que précédemment, désactivez-la
+            option.checked = false;
+            previousOptionValue = null;
+        } else {
+            // Désactivez tous les autres boutons "J'aime"
+            likeOptions.forEach((otherOption, otherIndex) => {
+                if (otherIndex !== index) {
+                    otherOption.checked = false;
                 }
             })
             .catch((error) => {
@@ -74,3 +124,32 @@ document.addEventListener("DOMContentLoaded", function () {
     // Appelez loadQuestion() pour charger la première question lorsque la page est chargée
     loadQuestion();
 });
+const stars = document.querySelectorAll('.star');
+stars.forEach((star, index) => {
+  star.addEventListener('click', () => {
+    for (let i = 0; i <= index; i++) {
+      stars[i].classList.add('yellow');
+    }
+  });
+});
+
+;
+const questionTitle = document.querySelector(".header-page h2");
+let totalQuestions = 0; 
+
+function displayQuestion(questions, index) {
+    const question = questions[`question${index + 1}`];
+    if (question) {
+        questionContainer.textContent = question.text;
+        questionTitle.textContent = `Question ${index + 1}/${totalQuestions}`; 
+    } 
+}
+
+fetch("questions.php")
+    .then(response => response.json())
+    .then(questions => {
+        totalQuestions = Object.keys(questions).length;
+        displayQuestion(questions, currentQuestionIndex);
+    });
+
+
