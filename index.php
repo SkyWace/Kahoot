@@ -44,6 +44,12 @@
             <span class="like-count" data-count="0">0</span>
         </label>
     </div>
+    </div>
+
+<!-- Compteur de bonnes réponses (initialement caché) -->
+<div id="correct-answers" style="display: none;">
+    <p>Nombre de bonnes réponses : <span id="correct-answer-count">0</span></p>
+</div>
 
     <script src="script.js"></script>
 </body>
