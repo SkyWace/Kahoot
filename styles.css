@@ -1,127 +1,130 @@
-/* styles.css */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+a{
+    color: white;
 }
 
-.main-title {
-  margin: 1rem 40% 1rem;
-  font-family: 'HirnBold';
-}
-.layout {
-  display: flex;
-  justify-content: center;
-}
-.framed {
-  display: flex;
-  flex-direction: column;
-  background-color: #43339d;
-  padding: 1rem;
-  border-radius: 16px;
-  min-width: 52rem;
-  min-height: 18.5rem;
-}
-
-.header-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.question {
-  font-size: 1.5em;
-  font-weight: 600;
-}
-
-.squizzie-button {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.squizzie-button button {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background-color: white;
-  color: #43339d;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-}
-.squizzie-button button:first-child::before {
-  content: "A";
-  color: white;
-  background-color: #43339d;
-  border-radius: 99999px;
-  padding: 0.5rem;
-  padding-inline: 0.75rem;
-}
-.squizzie-button button:last-child::before {
-  content: "B";
-  color: white;
-  background-color: #43339d;
-  border-radius: 99999px;
-  padding: 0.5rem;
-  padding-inline: 0.75rem;
-}
-.answer-result {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.result {
-  color: white;
-  font-weight: 600;
-}
-
-.star {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-}
-.star.yellow:before {
-  background-color: #ffce00;
-}
-
-.star::before {
-  content: "";
-  display: inline-block;
-  width: 3rem;
-  height: 3rem;
-  background-color: white;
-  mask-image: url("asset/star-of-david.svg");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-}
-
-.like-options {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-/* Cacher les boutons radio par défaut */
-.like-options input[type="radio"] {
-  display: none;
-}
-
-.like-count {
-  color: white;
-}
-/* Style des labels */
-.like-label {
-  margin-right: 5px;
-}
-
-.test {
+  .main-title {
+    margin: 1rem 45% 1rem;
+    font-family: 'HirnBold';
+  }
+  .layout {
+    display: flex;
+    justify-content: center;
+  }
+  .framed {
+    display: flex;
+    flex-direction: column;
+    background-color: #43339d;
+    padding: 1rem;
+    border-radius: 16px;
+    min-width: 52rem;
+    min-height: 18.5rem;
+  }
+  
+  .header-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .question {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  
+  .squizzie-button {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .squizzie-button button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: white;
+    color: #43339d;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .squizzie-button button:first-child::before {
+    content: "A";
+    color: white;
+    background-color: #43339d;
+    border-radius: 99999px;
+    padding: 0.5rem;
+    padding-inline: 0.75rem;
+  }
+  .squizzie-button button:last-child::before {
+    content: "B";
+    color: white;
+    background-color: #43339d;
+    border-radius: 99999px;
+    padding: 0.5rem;
+    padding-inline: 0.75rem;
+  }
+  .answer-result {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .result {
+    color: white;
+    font-weight: 600;
+  }
+  
+  .star {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  .star.yellow:before {
+    background-color: #ffce00;
+  }
+  
+  .star::before {
+    content: "";
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    mask-image: url("asset/star-of-david.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+  }
+  
+  .like-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  /* Cacher les boutons radio par défaut */
+  .like-options input[type="radio"] {
     display: none;
-}
+  }
+  
+  .like-count {
+    color: white;
+  }
+  /* Style des labels */
+  .like-label {
+    margin-right: 5px;
+  }
+  
+  .test {
+      display: none;
+  }

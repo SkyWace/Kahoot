@@ -25,42 +25,25 @@ require_once("ConnexionBDD.php");
                     <button class="false" id="falseButton">Faux</button>
                 </div>
                 <div class="answer-result">
-                    <p class="result" id="result"></p>
+                    <div class="result" id="result"></div>
                 </div>
-
                 <a href="Quizuse/creer_quiz.php">Créer un Quizz</a>
-
                 <!-- Options "J'aime" -->
                 <div class="like-options">
-                    <label>
-                        <input type="radio" name="like-option" value="1">
-                        <span class="like-label">1 étoile</span>
-                        <span class="like-count" data-count="0">0</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="like-option" value="2">
-                        <span class="like-label">2 étoiles</span>
-                        <span class="like-count" data-count="0">0</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="like-option" value="3">
-                        <span class="like-label">3 étoiles</span>
-                        <span class="like-count" data-count="0">0</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="like-option" value="4">
-                        <span class="like-label">4 étoiles</span>
-                        <span class="like-count" data-count="0">0</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="like-option" value="5">
-                        <span class="like-label">5 étoiles</span>
-                        <span class="like-count" data-count="0">0</span>
-                    </label>
+                    <form action="Note.php" method="post">
+                        <label>
+                            <input type="range" id="ratingSlider" name="note" min="1" max="5" step="1" value="1">
+                            <span class="like-label">Note :</span>
+                            <span class="like-count" id="ratingValue">1</span>
+                            <button type="submit">Enregistrer la note</button>
+                        </label>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+        
+
     <!-- Compteur de bonnes réponses (initialement caché) -->
     <div class="test" id="correct-answers">
         <p>Nombre de bonnes réponses : <span id="correct-answer-count">0</span></p>
