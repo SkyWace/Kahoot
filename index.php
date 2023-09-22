@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Questions Vrai ou Faux</title>
     <link rel="stylesheet" href="styles.css"> <!-- Fichier de styles CSS (créez-le) -->
+    <a href="Quizuse/creer_quiz.php">Créer un Quizz</a>
 </head>
 <body>
     <h1>Questions Vrai ou Faux</h1>
