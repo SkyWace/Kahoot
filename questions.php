@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *"); // Autorise toutes les origines à accéder à ce fichier
 $questions = [
     "question1" => [
         "text" => "La Terre est plate.",
@@ -10,4 +11,6 @@ $questions = [
     ],
     // Ajoutez d'autres questions ici
 ];
+
+echo json_encode($questions);
 ?>
