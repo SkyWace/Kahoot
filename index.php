@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
+<?php
+require_once("ConnexionBDD.php");
+?>
 <head>
     <meta charset="UTF-8">
     <title>Questions Vrai ou Faux</title>
     <link rel="stylesheet" href="styles.css"> <!-- Fichier de styles CSS (créez-le) -->
-    <a href="Quizuse/creer_quiz.php">Créer un Quizz</a>
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>Questions Vrai ou Faux</h1>
@@ -12,10 +16,12 @@
         <!-- La question sera affichée ici -->
     </div>
     <div id="button-container">
-        <button id="true-button">Vrai</button>
-        <button id="false-button">Faux</button>
+        <button id="trueButton">Vrai</button>
+        <button id="falseButton">Faux</button>
     </div>
     <div id="result"></div>
+
+    <a href="Quizuse/creer_quiz.php">Créer un Quizz</a>
 
     <!-- Options "J'aime" -->
     <div class="like-options">
@@ -51,7 +57,5 @@
 <div id="correct-answers" style="display: none;">
     <p>Nombre de bonnes réponses : <span id="correct-answer-count">0</span></p>
 </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
