@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const trueButton = document.getElementById("trueButton");
     const falseButton = document.getElementById("falseButton");
     const result = document.getElementById("result");
-    const correctAnswerCount = document.getElementById("correct-answer-count");
+    const finalResult = document.getElementById("correct-answers")
+    let correctAnswerCount = document.getElementById("correct-answer-count");
 
     let currentQuestion = null;
     let correctAnswers = 0;
@@ -30,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     falseButton.style.display = "none";
 
                     // Rendre visible le compteur de bonnes réponses
-                    correctAnswerCount.style.display = "block";
-                    correctAnswerCount.textContent = `Bonnes réponses : ${correctAnswers}`;
+                    finalResult.style.display = "block";
+                    correctAnswerCount.innerText = `Bonnes réponses : ${correctAnswers}`;
                 }
             })
             .catch((error) => {
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Réponse correcte
             result.textContent = "Correct !";
             correctAnswers++;
+            console.log(correctAnswerCount);
         } else {
             // Réponse incorrecte
             result.textContent = "Incorrect.";
@@ -57,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     falseButton.addEventListener("click", function () {
         if (currentQuestion && currentQuestion.answer === 0) {
             // Réponse correcte
+            console.log("coucou");
             result.textContent = "Correct !";
             correctAnswers++;
         } else {

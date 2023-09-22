@@ -30,3 +30,7 @@
     content: ")";
     margin-left: 5px;
 }
+
+.test {
+    display: none;
+}

@@ -54,7 +54,7 @@ require_once("ConnexionBDD.php");
     </div>
 
 <!-- Compteur de bonnes réponses (initialement caché) -->
-<div id="correct-answers" style="display: none;">
+<div class="test" id="correct-answers">
     <p>Nombre de bonnes réponses : <span id="correct-answer-count">0</span></p>
 </div>
 </body>
