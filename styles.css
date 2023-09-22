@@ -1,0 +1,32 @@
+/* styles.css */
+
+/* Cacher les boutons radio par défaut */
+.like-options input[type="radio"] {
+    display: none;
+}
+
+/* Style des boutons radio personnalisés */
+.like-options label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Style des labels */
+.like-label {
+    margin-right: 5px;
+}
+
+/* Style des compteurs */
+.like-count::before {
+    content: "(";
+}
+
+.like-count::after {
+    content: ")";
+    margin-left: 5px;
+}

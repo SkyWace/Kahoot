@@ -56,3 +56,48 @@ fetch("questions.php")
     .then(questions => {
         displayQuestion(questions, currentQuestionIndex);
     });
+
+// ...
+
+// ...
+
+// Compteurs "J'aime"
+const likeOptions = document.querySelectorAll('input[name="like-option"]');
+const likeCounts = document.querySelectorAll('.like-count');
+
+likeOptions.forEach((option, index) => {
+    let previousOptionValue = null; // Pour stocker la valeur précédente sélectionnée
+
+    option.addEventListener("change", () => {
+        const selectedOptionValue = option.value;
+        const likeCount = likeCounts[index];
+
+        if (previousOptionValue === selectedOptionValue) {
+            // Si l'option sélectionnée est la même que précédemment, désactivez-la
+            option.checked = false;
+            previousOptionValue = null;
+        } else {
+            // Désactivez tous les autres boutons "J'aime"
+            likeOptions.forEach((otherOption, otherIndex) => {
+                if (otherIndex !== index) {
+                    otherOption.checked = false;
+                }
+            });
+
+            // Incrémentez le compteur de l'option sélectionnée
+            likeCount.textContent = parseInt(likeCount.textContent) + 1;
+            previousOptionValue = selectedOptionValue;
+
+            // Vous pouvez stocker les valeurs dans un tableau ou envoyer à un serveur, selon vos besoins
+            // Par exemple, si vous souhaitez stocker les valeurs côté serveur en PHP :
+            // const formData = new FormData();
+            // formData.append("likeOption", selectedOptionValue);
+            // fetch("enregistrer_like.php", {
+            //     method: "POST",
+            //     body: formData
+            // });
+        }
+    });
+});
+
+// ...
